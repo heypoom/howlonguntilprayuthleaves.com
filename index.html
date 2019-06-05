@@ -134,6 +134,10 @@
           font-size: 1.2em;
         }
       }
+
+      .countup {
+        margin-top: 25px;
+      }
     </style>
   </head>
   <body>
@@ -173,6 +177,13 @@
       </div>
 
       <h1 class="heading">ประยุทธ์เป็นนายกมาแล้ว</h1>
+
+      <div class="countup">
+        <div class="slot slot__highlight">
+          <div class="up-days">0</div>
+          <div class="label">วัน</div>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -183,7 +194,10 @@
       const minutesEl = document.querySelector('.minutes')
       const secondsEl = document.querySelector('.seconds')
 
-      const endDate = new Date('2023-05-06')
+      const upDaysEl = document.querySelector('.up-days')
+
+      const enterDate = new Date('2019-06-05')
+      const leaveDate = new Date('2023-05-06')
 
       let timer
 
@@ -191,7 +205,7 @@
         const currentDate = Date.now()
 
         // difference of dates
-        const difference = endDate - currentDate
+        const difference = leaveDate - currentDate
 
         // if difference is negative than it's pass the target date
         if (difference < 0) {
@@ -227,6 +241,12 @@
         hoursEl.innerHTML = hours
         minutesEl.innerHTML = minutes
         secondsEl.innerHTML = seconds
+
+        const beenPresidentForDays = Math.ceil(
+          (currentDate - enterDate) / 1000 / 60 / 60 / 24
+        )
+
+        upDaysEl.innerHTML = beenPresidentForDays
       }
 
       timer = setInterval(countdown, 1000)
