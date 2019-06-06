@@ -105,6 +105,13 @@
       color: #333;
     }
 
+    .i-love-prayuth {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 35%;
+      margin-bottom: -10px;
+    }
     @media (max-width: 830px) {
       .countdown {
         grid-template-columns: repeat(3, 1fr);
@@ -116,6 +123,11 @@
 
       .heading {
         font-size: 1.8em;
+      }
+      .i-love-prayuth {
+        position: relative;
+        margin-top: 50px;
+        width: 100%;
       }
     }
 
@@ -186,7 +198,7 @@
       </div>
     </div>
   </div>
-
+  <img class="i-love-prayuth" src="prayuth_song.png">
   <script>
     const yearsEl = document.querySelector('.years')
     const monthsEl = document.querySelector('.months')
