@@ -256,11 +256,11 @@
       minutesEl.innerHTML = minutes
       secondsEl.innerHTML = seconds
 
-      const beenPresidentForDays = Math.ceil(
+      const beenPrimeMinisterForDays = Math.ceil(
         (currentDate - coupDate) / 1000 / 60 / 60 / 24
       )
 
-      upDaysEl.innerHTML = beenPresidentForDays
+      upDaysEl.innerHTML = beenPrimeMinisterForDays
     }
 
     timer = setInterval(countdown, 1000)
