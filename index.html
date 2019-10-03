@@ -215,6 +215,13 @@
 
     let timer
 
+    function numberWithCommas(x) {
+      // Ref: https://stackoverflow.com/a/2901298
+      let parts = x.toString().split(".");
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return parts.join(".");
+    }
+
     function countdown() {
       const currentDate = Date.now()
 
@@ -260,7 +267,7 @@
         (currentDate - coupDate) / 1000 / 60 / 60 / 24
       )
 
-      upDaysEl.innerHTML = beenPrimeMinisterForDays
+      upDaysEl.innerHTML = numberWithCommas(beenPrimeMinisterForDays)
     }
 
     timer = setInterval(countdown, 1000)
