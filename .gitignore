@@ -31,3 +31,6 @@ Temporary Items
 .apdisk
 
 # End of https://www.gitignore.io/api/macos
+
+# Local Netlify folder
+.netlify
